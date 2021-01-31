@@ -1,0 +1,58 @@
+﻿<Window x:Class="Piet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Piet"
+        mc:Ignorable="d"
+        Title="Piet"
+        Height="455"
+        Width="700"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Frame Name="MainFrame"
+               Grid.Row="0"
+               Grid.RowSpan="2"
+               NavigationUIVisibility="Hidden" />
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="615" />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="45" />
+            </Grid.ColumnDefinitions>
+            <Border Name="minimizeBtn"
+                    Grid.Row="0"
+                    Margin="5,10,5,5"
+                    Grid.Column="1"
+                    CornerRadius="10"
+                    MouseLeftButtonUp="MinimizeIconClick"
+                    Background="{StaticResource MinimizeCloseTileBackgroundColor}"
+                    MouseEnter="MinimizeIconMouseEnter"
+                    MouseLeave="MinimizeIconMouseLeave">
+                <Image Margin="8"
+                       Source="/resources/minimize-button.png" />
+            </Border>
+            <Border Name="closeBtn"
+                    Grid.Row="0"
+                    Margin="5,10,10,5"
+                    Grid.Column="2"
+                    CornerRadius="10"
+                    MouseLeftButtonDown="CloseIconClick"
+                    Background="{StaticResource MinimizeCloseTileBackgroundColor}"
+                    MouseEnter="CloseIconMouseEnter"
+                    MouseLeave="CloseIconMouseLeave">
+                <Image Margin="8"
+                       Source="/resources/close-button.png" />
+            </Border>
+            <Border Grid.Row="0"
+                    Grid.Column="0"
+                    Background="Transparent"
+                    MouseLeftButtonDown="HeaderMouseDown" />
+        </Grid>
+    </Grid>
+</Window>

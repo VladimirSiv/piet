@@ -1,0 +1,413 @@
+﻿<Page x:Class="Piet.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Piet"
+      mc:Ignorable="d"
+      d:DesignHeight="455"
+      d:DesignWidth="700"
+      Title="SettingsPage">
+
+    <Grid Background="{StaticResource AppBackgroundColor}"
+          RenderTransformOrigin="0.767,0.187">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="195" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Border Margin="10,10,5,5"
+                    Grid.Row="0"
+                    CornerRadius="10"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Background="{StaticResource TileBackgroundColor}">
+                <Image Height="104"
+                       Width="80"
+                       Margin="40,40,40,40"
+                       Source="/resources/logo.png" />
+            </Border>
+            <Border Margin="10,5,5,5"
+                    Grid.Row="1"
+                    CornerRadius="10"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Background="{StaticResource TileBackgroundColor}" />
+            <Border Margin="10,5,5,5"
+                    Grid.Row="2"
+                    CornerRadius="10"
+                    Grid.Column="0"
+                    Background="{StaticResource TileBackgroundColor}" />
+            <Border Margin="5,5,5,5"
+                    Grid.Row="2"
+                    CornerRadius="10"
+                    Grid.Column="1"
+                    Background="{StaticResource TileBackgroundColor}" />
+            <Border x:Name="saveButton"
+                    Margin="10,5,5,5"
+                    Grid.Row="3"
+                    CornerRadius="10"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Background="{StaticResource HomeSettingsTileBackgroundColor}"
+                    MouseLeftButtonDown="SaveButtonClick"
+                    MouseEnter="SaveButtonMouseEnter"
+                    MouseLeave="SaveButtonMouseLeave">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Image Source="/resources/save.png"
+                           Height="13.17"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,3 " />
+                    <Label Margin="5,0,0,0"
+                           Content="SAVE"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontWeight="Bold"
+                           FontFamily="/Piet;component/resources/#Roboto" />
+                </StackPanel>
+            </Border>
+            <Border Margin="10,5,5,10"
+                    Grid.Row="4"
+                    CornerRadius="10"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Background="{StaticResource TileBackgroundColor}" />
+
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="280" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="45" />
+                </Grid.ColumnDefinitions>
+                <Border Margin="5,10,5,5"
+                        Grid.Row="0"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Background="{StaticResource TileBackgroundColor}" />
+                <Border Margin="5,10,5,5"
+                        Grid.Row="0"
+                        CornerRadius="10"
+                        Grid.Column="1"
+                        Background="{StaticResource TileBackgroundColor}" />
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border Margin="5,5,5,5"
+                        Grid.Row="0"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Background="{StaticResource TileBackgroundColor}">
+                    <Label Margin="30,0,8,0"
+                           Content="HANDLING OF LAST IMAGES:"
+                           FontWeight="Bold"
+                           Foreground="{StaticResource OptionTileTextColor}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="/Piet;component/resources/#Roboto" />
+                </Border>
+                <Border Margin="5,5,5,5"
+                        Grid.Row="1"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Background="{StaticResource TileBackgroundColor}" />
+                <Border Margin="5,5 ,5,5"
+                        Grid.Row="1"
+                        CornerRadius="10"
+                        Grid.Column="1"
+                        Background="{StaticResource TileBackgroundColor}" />
+                <Border Margin="5,5,5,5"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        CornerRadius="10"
+                        Grid.Column="2"
+                        Background="{StaticResource TileBackgroundColor}">
+                    <StackPanel>
+                        <Image x:Name="cutOffImage"
+                               Margin="5,5,5,0"
+                               Width="128"
+                               Height="70"
+                               Source="/resources/Columns_Selected.png"
+                               MouseEnter="CutOffImageMouseEnter"
+                               MouseLeave="CutOffImageMouseLeave"
+                               MouseLeftButtonDown="CutOffImageLeftButtonDown" />
+                        <Label x:Name="cutOffImageLabel"
+                               Content="CUT OFF IMAGES"
+                               FontSize="10"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource ColumnsRowsSelectedTextColor}"
+                               FontFamily="/Piet;component/resources/#Roboto" />
+                    </StackPanel>
+                </Border>
+                <Border Margin="5,5,10,5"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        CornerRadius="10"
+                        Grid.Column="3"
+                        Background="{StaticResource TileBackgroundColor}">
+                    <StackPanel>
+                        <Image x:Name="omitImage"
+                               Margin="5,5,5,0"
+                               Width="128"
+                               Height="70"
+                               Source="/resources/Omit_Deselected.png"
+                               MouseEnter="OmitImageEnter"
+                               MouseLeave="OmitImageMouseLeave"
+                               MouseLeftButtonDown="OmitImageLeftButtonDown" />
+                        <Label x:Name="omitImageLabel"
+                               Content="OMIT (LEAVE GAPS)"
+                               FontSize="10"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource ColumnsRowsDeselectedTextColor}"
+                               FontFamily="/Piet;component/resources/#Roboto" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Background="{StaticResource TileBackgroundColor}">
+                    <Label Content="ROUND CORNERS ON IMAGES"
+                           Foreground="{StaticResource OptionTileTextColor}"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Margin="30,0,0,0"
+                           FontFamily="/Piet;component/resources/#Roboto" />
+                </Border>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="1"
+                        Background="{StaticResource TileBackgroundColor}" />
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="2"
+                        Background="{StaticResource InputTileBackgroundColor}">
+                    <local:IntegerUpDown x:Name="imageCornerRadiusBox"
+                                         MaxValue="40"
+                                         MinValue="0"
+                                         IncrementValue="1"
+                                         FormatString="{}{0}"
+                                         VerticalAlignment="Center"
+                                         OnValueChange="ImageCornerRadiusChanged"
+                                         Margin="0,0,10,0" />
+                </Border>
+                <Border Margin="5,5,10,5"
+                        CornerRadius="10"
+                        Grid.Column="3"
+                        Background="{StaticResource TileBackgroundColor}" />
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Background="{StaticResource TileBackgroundColor}">
+                    <Label Content="OFFSET"
+                           Foreground="{StaticResource OptionTileTextColor}"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Margin="30,0,0,0"
+                           FontFamily="/Piet;component/resources/#Roboto" />
+                </Border>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="1"
+                        Background="{StaticResource InputTileBackgroundColor}">
+                    <local:IntegerUpDown x:Name="offsetSizeBox"
+                                         MaxValue="20"
+                                         IncrementValue="1"
+                                         MinValue="0"
+                                         FormatString="{}{0}"
+                                         VerticalAlignment="Center"
+                                         OnValueChange="OffsetSizeChanged"
+                                         Margin="0,0,10,0" />
+                </Border>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="2"
+                        Background="{StaticResource TileBackgroundColor}" />
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="3"
+                        Background="{StaticResource TileBackgroundColor}" />
+                <Border Margin="5,5,10,5"
+                        CornerRadius="10"
+                        Grid.Column="4"
+                        Background="{StaticResource TileBackgroundColor}" />
+            </Grid>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="280" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Background="{StaticResource TileBackgroundColor}">
+                    <Label Content="BACKGROUND COLOR"
+                           Foreground="{StaticResource OptionTileTextColor}"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontFamily="/Piet;component/resources/#Roboto" />
+                </Border>
+
+                <Border Name="colorPickerBorder"
+                        Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="1"
+                        Background="{StaticResource InputTileBackgroundColor}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="0" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="colorToggleButton"
+                                Grid.Row="0"
+                                Margin="5"
+                                CornerRadius="5"
+                                MouseLeftButtonUp="colorToggleButtonLeftMouseButtonUp" />
+                        <Popup x:Name="colorPopUp"
+                               Margin="0,5,0,0"
+                               Grid.Row="1"
+                               StaysOpen="False"
+                               AllowsTransparency="True"
+                               PlacementTarget="{Binding ElementName=colorToggleButton}"
+                               VerticalOffset="3">
+                            <local:ColorPicker x:Name="colorPicker"
+                                               OnPickColor="ColorPickerChanged" />
+                        </Popup>
+                    </Grid>
+                </Border>
+                <Border Margin="5,5,10,5"
+                        CornerRadius="10"
+                        Grid.Column="2"
+                        Background="{StaticResource TileBackgroundColor}" />
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="370" />
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Background="{StaticResource TileBackgroundColor}">
+                    <Label Content="RUN ON WINDOWS START"
+                           Foreground="{StaticResource OptionTileTextColor}"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Margin="30,0,0,0"
+                           FontFamily="/Piet;component/resources/#Roboto" />
+                </Border>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="1"
+                        Background="{StaticResource InputTileBackgroundColor}">
+                    <Border x:Name="runOnStartupBox"
+                            CornerRadius="8"
+                            Margin="3"
+                            BorderThickness="1"
+                            MouseEnter="RunOnStartupBoxMouseEnter"
+                            MouseLeave="RunOnStartupBoxMouseLeave"
+                            MouseLeftButtonDown="RunOnStartupLeftButtonDown" />
+                </Border>
+                <Border Margin="5,5,10,5"
+                        CornerRadius="10"
+                        Grid.Column="2"
+                        Background="{StaticResource TileBackgroundColor}" />
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border Margin="5,5,5,5"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Background="{StaticResource TileBackgroundColor}" />
+                <Border Margin="5,5,10,5"
+                        CornerRadius="10"
+                        Grid.Column="1"
+                        Background="{StaticResource TileBackgroundColor}" />
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border Margin="5,5,10,10"
+                        CornerRadius="10"
+                        Grid.Column="0"
+                        Background="{StaticResource TileBackgroundColor}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

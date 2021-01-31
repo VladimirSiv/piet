@@ -1,0 +1,36 @@
+﻿<Application x:Class="Piet.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="AppBackgroundColor"
+                         Color="#232526" />
+        <SolidColorBrush x:Key="TileBackgroundColor"
+                         Color="#2e3133" />
+        <SolidColorBrush x:Key="HomeSettingsTileBackgroundColor"
+                         Color="#FCD202" />
+        <SolidColorBrush x:Key="HomeSettingsTileHoverBackgroundColor"
+                         Color="White" />
+        <SolidColorBrush x:Key="InputTileBackgroundColor"
+                         Color="White" />
+        <SolidColorBrush x:Key="OptionTileTextColor"
+                         Color="#FFB8C5CC" />
+        <SolidColorBrush x:Key="ColumnsRowsSelectedTextColor"
+                         Color="White" />
+        <SolidColorBrush x:Key="ColumnsRowsDeselectedTextColor"
+                         Color="#5C6266" />
+        <SolidColorBrush x:Key="MinimizeCloseTileBackgroundColor"
+                         Color="#FF454A4D" />
+        <SolidColorBrush x:Key="StartButtonTileBackgroundColor"
+                         Color="#465CE9" />
+        <SolidColorBrush x:Key="StartButtonTileFontColor"
+                         Color="White" />
+        <SolidColorBrush x:Key="StartButtonTileBackgroundColorHover"
+                         Color="White" />
+        <SolidColorBrush x:Key="StartButtonTileFontColorHover"
+                         Color="Black" />
+        <SolidColorBrush x:Key="SelectFolderTileBackgroundColor"
+                         Color="#FFD42627" />
+        <Image x:Key="trayIcon"
+               Source="/resources/logo.png" />
+    </Application.Resources>
+</Application>
